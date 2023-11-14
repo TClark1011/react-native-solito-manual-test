@@ -1,5 +1,10 @@
 {
 	"name": "react-native-solito-manual-test",
+	"private": true,
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	],
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
