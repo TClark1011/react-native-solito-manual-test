@@ -1,2 +1,23 @@
+# dependencies
 **/node_modules
+**/.pnp
+**/.pnp.js
+**/.yarn/install-state.gz
+
+# misc system files
 **/.DS_Store
+**/*.pem
+
+# typescript build analysis
+**/*.tsbuildinfo
+
+# local env configs
+**/.env*.local
+
+# build outputs
+**/build
+**/out
+
+# test reports
+**/coverage
+
