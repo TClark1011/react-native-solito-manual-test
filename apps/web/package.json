@@ -10,6 +10,11 @@
 	},
 	"dependencies": {
 		"@rn-solito-test/app": "*",
+		"@rn-solito-test/trpc": "*",
+		"@tanstack/react-query": "^4",
+		"@trpc/client": "^10.43.3",
+		"@trpc/react-query": "^10.43.3",
+		"@trpc/server": "^10.43.3",
 		"next": "14.0.2",
 		"react": "^18",
 		"react-dom": "^18"

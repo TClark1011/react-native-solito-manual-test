@@ -1,11 +1,4 @@
 {
 	"extends": ["expo/tsconfig.base", "../../tsconfig.json"],
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"~/*": ["*"],
-			"~*": ["features/*/index"]
-		}
-	},
 	"include": ["**/*.ts", "**/*.tsx", "index.ts"]
 }
