@@ -6,11 +6,8 @@ export const transformer = superjson;
 
 export const apiEndpoint = "/api/trpc";
 
-const getBaseUrl = () =>
-	typeof window === "undefined" ? "http://localhost:3000" : "";
-
-export const getTRPCHandlerUrl = () => {
-	return getBaseUrl() + apiEndpoint;
+export const getTRPCHandlerUrl = (baseUrl: string) => {
+	return baseUrl + apiEndpoint;
 };
 
 export type { TrpcApiRouter };

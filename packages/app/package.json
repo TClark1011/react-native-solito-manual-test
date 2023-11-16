@@ -2,6 +2,9 @@
 	"name": "@rn-solito-test/app",
 	"version": "0.0.0",
 	"dependencies": {
+		"@rn-solito-test/trpc": "*",
+		"@tanstack/react-query": "^4",
+		"@trpc/react-query": "^10.43.3",
 		"react-native": "^0.72.7",
 		"solito": "^4.1.3"
 	},

@@ -1,15 +1,7 @@
 "use client";
 
-import {
-	createTRPCReact,
-	loggerLink,
-	unstable_httpBatchStreamLink,
-} from "@trpc/react-query";
-import {
-	getTRPCHandlerUrl,
-	type TrpcApiRouter,
-	transformer,
-} from "@rn-solito-test/trpc/shared";
+import { createTRPCReact, httpBatchLink, loggerLink } from "@trpc/react-query";
+import { getTRPCHandlerUrl, type TrpcApiRouter, transformer } from "../shared";
 import { FC, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -17,12 +9,16 @@ export const api = createTRPCReact<TrpcApiRouter>();
 
 export type TRPCReactProviderProps = {
 	children: React.ReactNode;
-	headers: Headers;
+	headers?: Headers;
+	baseUrl: string;
+	disableLogging?: boolean;
 };
 
 export const TRPCReactProvider: FC<TRPCReactProviderProps> = ({
 	children,
 	headers,
+	baseUrl,
+	disableLogging = false,
 }) => {
 	const [queryClient] = useState(() => new QueryClient({}));
 
@@ -32,11 +28,12 @@ export const TRPCReactProvider: FC<TRPCReactProviderProps> = ({
 			links: [
 				loggerLink({
 					enabled: (op) =>
-						process.env.NODE_ENV === "development" ||
-						(op.direction === "down" && op.result instanceof Error),
+						!disableLogging &&
+						(process.env.NODE_ENV === "development" ||
+							(op.direction === "down" && op.result instanceof Error)),
 				}),
-				unstable_httpBatchStreamLink({
-					url: getTRPCHandlerUrl(),
+				httpBatchLink({
+					url: getTRPCHandlerUrl(baseUrl),
 					headers() {
 						const heads = new Map(headers);
 
