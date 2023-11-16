@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { headers } from "next/headers";
 import { TRPCReactProvider } from "@rn-solito-test/trpc/client";
+import { AppProvider } from "@rn-solito-test/app/app-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<TRPCReactProvider headers={headers()} baseUrl="http://localhost:3000">
-				<body className={inter.className}>{children}</body>
-			</TRPCReactProvider>
+			<AppProvider>
+				<TRPCReactProvider headers={headers()}>
+					<body className={inter.className}>{children}</body>
+				</TRPCReactProvider>
+			</AppProvider>
 		</html>
 	);
 }
