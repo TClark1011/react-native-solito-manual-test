@@ -10,13 +10,15 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"clean": "rm -rf node_modules && rm -rf */*/node_modules"
+		"clean": "rm -rf node_modules && rm -rf */*/node_modules",
+		"gen:package": "hygen packages basic"
 	},
 	"keywords": [],
 	"author": "Thomas Clark",
 	"license": "ISC",
 	"devDependencies": {
 		"dotenv-cli": "^7.3.0",
+		"hygen": "^6.2.11",
 		"turbo": "^1.10.16",
 		"typescript": "~5.2.0"
 	}
