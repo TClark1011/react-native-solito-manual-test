@@ -8,7 +8,8 @@
 		"android": "dotenv -e env/.android.development.env expo start --android",
 		"ios": "dotenv -e env/.ios.development.env expo start --ios",
 		"web": "expo start --web",
-		"test": "jest --watchAll"
+		"test": "jest --watchAll",
+		"typecheck": "tsc --noEmit"
 	},
 	"jest": {
 		"preset": "jest-expo"

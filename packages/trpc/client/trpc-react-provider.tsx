@@ -10,14 +10,14 @@ export const api = createTRPCReact<TrpcApiRouter>();
 export type TRPCReactProviderProps = {
 	children: React.ReactNode;
 	headers?: Headers;
-	baseUrl: string;
+	baseUrl?: string;
 	disableLogging?: boolean;
 };
 
 export const TRPCReactProvider: FC<TRPCReactProviderProps> = ({
 	children,
 	headers,
-	baseUrl,
+	baseUrl = "",
 	disableLogging = false,
 }) => {
 	const [queryClient] = useState(() => new QueryClient({}));

@@ -26,3 +26,5 @@
 **/yarn-debug.*
 **/yarn-error.*
 
+# turbo
+**/.turbo

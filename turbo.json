@@ -17,6 +17,7 @@
 		"android": {
 			"cache": false,
 			"persistent": true
-		}
+		},
+		"typecheck": {}
 	}
 }

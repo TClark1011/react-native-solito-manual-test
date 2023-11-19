@@ -1,20 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, Stack } from "@rn-solito-test/ui";
 import { TextLink } from "solito/link";
 
 export const LandingScreen = () => {
 	return (
-		<View style={styles.root}>
+		<Stack alignItems="center" gap={16}>
 			<Text>This is the landing page</Text>
 			<TextLink href="/query-test">Go to the query test page</TextLink>
-		</View>
+		</Stack>
 	);
 };
-
-const styles = StyleSheet.create({
-	root: {
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		gap: 16,
-	},
-});

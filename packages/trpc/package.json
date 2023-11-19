@@ -2,6 +2,9 @@
 	"name": "@rn-solito-test/trpc",
 	"version": "0.0.0",
 	"main": "index.ts",
+	"scripts": {
+		"typecheck": "tsc --noEmit"
+	},
 	"dependencies": {
 		"@tanstack/react-query": "^4",
 		"@trpc/react-query": "^10.43.3",
