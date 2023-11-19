@@ -12,22 +12,30 @@
 	"dependencies": {
 		"@rn-solito-test/app": "*",
 		"@rn-solito-test/trpc": "*",
+		"@rn-solito-test/ui": "*",
+		"@tamagui/next-theme": "^1.76.0",
 		"@tanstack/react-query": "^4",
 		"@trpc/client": "^10.43.3",
+		"@trpc/next": "^10.43.6",
 		"@trpc/react-query": "^10.43.3",
 		"@trpc/server": "^10.43.3",
 		"next": "14.0.2",
+		"raf": "^3.4.1",
 		"react": "^18",
-		"react-dom": "^18"
+		"react-dom": "^18",
+		"react-native": "^0.72.7",
+		"react-native-web": "^0.19.9"
 	},
 	"devDependencies": {
 		"@expo/next-adapter": "^5.0.2",
+		"@tamagui/next-plugin": "^1.76.0",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
 		"autoprefixer": "^10.0.1",
 		"eslint": "^8",
 		"eslint-config-next": "14.0.2",
+		"next-compose-plugins": "^2.2.1",
 		"postcss": "^8",
 		"tailwindcss": "^3.3.0"
 	}

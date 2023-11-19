@@ -28,3 +28,6 @@
 
 # turbo
 **/.turbo
+
+# tamagui output
+**/.tamagui

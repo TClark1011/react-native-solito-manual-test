@@ -9,59 +9,21 @@ import { SplashScreen, Stack } from "expo-router";
 import { useEffect, useMemo } from "react";
 import { useColorScheme } from "react-native";
 import { TRPCReactProvider } from "@rn-solito-test/trpc/client";
-import { AppProvider } from "@rn-solito-test/app/app-provider";
-import {
-	Inter_900Black,
-	Inter_100Thin,
-	Inter_200ExtraLight,
-	Inter_300Light,
-	Inter_400Regular,
-	Inter_500Medium,
-	Inter_600SemiBold,
-	Inter_700Bold,
-	Inter_800ExtraBold,
-	useFonts as useInterFonts,
-} from "@expo-google-fonts/inter";
 import { env } from "../constants/env";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { UIProvider, uiConfig } from "@rn-solito-test/ui";
 
-export {
-	// Catch any errors thrown by the Layout component.
-	ErrorBoundary,
-} from "expo-router";
-
-export const unstable_settings = {
-	// Ensure that reloading on `/modal` keeps a back button present.
-	initialRouteName: "(tabs)",
-};
+export { ErrorBoundary } from "expo-router";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-	const [customFontsLoaded, customFontsError] = useFonts({
+	const [fontsLoaded, fontsError] = useFonts({
 		SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+		Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+		InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
 		...FontAwesome.font,
 	});
-
-	const [interLoaded, interError] = useInterFonts({
-		Inter_900Black,
-		Inter_100Thin,
-		Inter_200ExtraLight,
-		Inter_300Light,
-		Inter_400Regular,
-		Inter_500Medium,
-		Inter_600SemiBold,
-		Inter_700Bold,
-		Inter_800ExtraBold,
-	});
-
-	const fontsLoaded = customFontsLoaded && interLoaded;
-
-	const fontsError = useMemo(
-		() => interError ?? customFontsError,
-		[interError, customFontsError],
-	);
 
 	// Expo Router uses Error Boundaries to catch errors in the navigation tree.4
 	useEffect(() => {
@@ -85,7 +47,7 @@ function RootLayoutNav() {
 	const colorScheme = useColorScheme();
 
 	return (
-		<AppProvider>
+		<UIProvider config={uiConfig}>
 			<TRPCReactProvider baseUrl={env.API_ROOT_URL} disableLogging>
 				<ThemeProvider
 					value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
@@ -96,6 +58,6 @@ function RootLayoutNav() {
 					</Stack>
 				</ThemeProvider>
 			</TRPCReactProvider>
-		</AppProvider>
+		</UIProvider>
 	);
 }

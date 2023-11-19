@@ -1,1 +1,1 @@
-export const aFromTrpcPackage = 5;
+export {};

@@ -1,22 +1,17 @@
 import { api } from "@rn-solito-test/trpc/client";
-import { Button, Stack, Text, View } from "tamagui";
+import { Button, Stack, Text, View, H1, Paragraph } from "tamagui";
 
 export const QueryTestScreen = () => {
 	const { data, refetch } = api.test.getMessage.useQuery();
 
 	return (
 		<Stack gap="$3">
-			<Text fontWeight="bold" fontSize={20}>
-				This is the query test page
-			</Text>
+			<H1>Query Test Page</H1>
 			<View padding="$3" backgroundColor="$gray6" borderRadius="$3">
-				<Text>{data ?? "Loading..."}</Text>
+				<Paragraph>{data ?? "Loading..."}</Paragraph>
 			</View>
-			{/* <Pressable style={styles.button} onPress={() => refetch()}>
-				<Text style={styles.buttonLabel}>Refetch</Text>
-			</Pressable> */}
-			<Button onPress={() => refetch()} theme="blue_active">
-				<Text>Refetch</Text>
+			<Button onPress={() => refetch()} theme="blue">
+				Refetch
 			</Button>
 		</Stack>
 	);
