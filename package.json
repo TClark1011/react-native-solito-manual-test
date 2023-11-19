@@ -12,7 +12,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"clean": "rm -rf node_modules && rm -rf */*/node_modules",
 		"gen:package": "hygen packages basic",
-		"typecheck": "turbo typecheck"
+		"typecheck": "turbo typecheck",
+		"dev": "turbo dev"
 	},
 	"keywords": [],
 	"author": "Thomas Clark",

@@ -7,5 +7,11 @@
 	"dependencies": {
 		"@tamagui/config": "^1.76.0",
 		"tamagui": "^1.76.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18"
+	},
+	"peerDependencies": {
+		"react": "^18"
 	}
 }

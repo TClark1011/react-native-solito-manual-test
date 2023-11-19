@@ -47,7 +47,7 @@ function RootLayoutNav() {
 	const colorScheme = useColorScheme();
 
 	return (
-		<UIProvider config={uiConfig}>
+		<UIProvider config={uiConfig} defaultTheme={colorScheme ?? undefined}>
 			<TRPCReactProvider baseUrl={env.API_ROOT_URL} disableLogging>
 				<ThemeProvider
 					value={colorScheme === "dark" ? DarkTheme : DefaultTheme}

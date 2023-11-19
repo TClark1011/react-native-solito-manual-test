@@ -9,11 +9,11 @@
 		"@rn-solito-test/ui": "*",
 		"@tanstack/react-query": "^4",
 		"@trpc/react-query": "^10.43.3",
-		"react": "18.2.0",
+		"react": "^18",
 		"solito": "^4.1.3"
 	},
 	"devDependencies": {
-		"@types/react": "~18.2.14"
+		"@types/react": "^18"
 	},
 	"main": "index.ts"
 }
