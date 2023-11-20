@@ -31,3 +31,6 @@
 
 # tamagui output
 **/.tamagui
+
+# local database
+**/dev.db*
